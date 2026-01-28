@@ -1,0 +1,1056 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Categories - Organic Food Shop</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #f5f5f5;
+      }
+
+      /* Header */
+      .header {
+        background: #00b207;
+        color: white;
+        padding: 20px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .header-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 28px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        transition: opacity 0.3s;
+      }
+
+      .nav-links a:hover {
+        opacity: 0.8;
+      }
+
+      .cart-icon {
+        position: relative;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      .cart-badge {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background: #ff6b6b;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #00b207 0%, #2ecc71 100%);
+        color: white;
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+        margin-bottom: 15px;
+      }
+
+      .hero p {
+        font-size: 18px;
+        opacity: 0.95;
+      }
+
+      /* Search and Filter Bar */
+      .filter-bar {
+        max-width: 1400px;
+        margin: -30px auto 30px;
+        padding: 0 20px;
+      }
+
+      .filter-container {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .search-box {
+        flex: 1;
+        min-width: 250px;
+        position: relative;
+      }
+
+      .search-box input {
+        width: 100%;
+        padding: 12px 45px 12px 15px;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        font-size: 14px;
+        transition: all 0.3s;
+      }
+
+      .search-box input:focus {
+        outline: none;
+        border-color: #00b207;
+        box-shadow: 0 0 0 3px rgba(0, 178, 7, 0.1);
+      }
+
+      .search-icon {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #00b207;
+        font-size: 18px;
+      }
+
+      .filter-select {
+        padding: 12px 15px;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.3s;
+        background: white;
+      }
+
+      .filter-select:focus {
+        outline: none;
+        border-color: #00b207;
+      }
+
+      .view-toggle {
+        display: flex;
+        gap: 10px;
+        margin-left: auto;
+      }
+
+      .view-btn {
+        padding: 10px 15px;
+        border: 2px solid #e0e0e0;
+        background: white;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 18px;
+        transition: all 0.3s;
+      }
+
+      .view-btn.active {
+        background: #00b207;
+        color: white;
+        border-color: #00b207;
+      }
+
+      /* Main Container */
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px 40px;
+      }
+
+      .categories-title {
+        font-size: 32px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .categories-subtitle {
+        color: #666;
+        margin-bottom: 30px;
+      }
+
+      /* Categories Grid */
+      .categories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+        margin-bottom: 50px;
+      }
+
+      .category-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .category-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(0, 178, 7, 0.2);
+      }
+
+      .category-image {
+        width: 100%;
+        height: 200px;
+        background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 80px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .category-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: #00b207;
+        color: white;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .category-content {
+        padding: 20px;
+      }
+
+      .category-name {
+        font-size: 20px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 8px;
+      }
+
+      .category-description {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 12px;
+        line-height: 1.5;
+      }
+
+      .category-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 12px;
+        border-top: 1px solid #f0f0f0;
+      }
+
+      .product-count {
+        font-size: 13px;
+        color: #999;
+      }
+
+      .category-arrow {
+        color: #00b207;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      /* Featured Categories Section */
+      .featured-section {
+        margin-bottom: 50px;
+      }
+
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+      }
+
+      .section-title {
+        font-size: 28px;
+        color: #333;
+      }
+
+      .view-all-btn {
+        background: #00b207;
+        color: white;
+        padding: 10px 25px;
+        border: none;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .view-all-btn:hover {
+        background: #009606;
+        transform: translateY(-2px);
+      }
+
+      /* Large Category Cards */
+      .featured-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 25px;
+      }
+
+      .featured-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        display: flex;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .featured-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 178, 7, 0.2);
+      }
+
+      .featured-image {
+        width: 150px;
+        background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 60px;
+      }
+
+      .featured-content {
+        padding: 20px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .featured-name {
+        font-size: 22px;
+        font-weight: 600;
+        color: #00b207;
+        margin-bottom: 8px;
+      }
+
+      .featured-description {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 12px;
+      }
+
+      .featured-stats {
+        display: flex;
+        gap: 20px;
+        font-size: 13px;
+        color: #999;
+      }
+
+      /* Promotional Banner */
+      .promo-banner {
+        background: linear-gradient(135deg, #00b207 0%, #2ecc71 100%);
+        border-radius: 15px;
+        padding: 40px;
+        color: white;
+        text-align: center;
+        margin: 50px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .promo-banner::before {
+        content: "";
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        top: -50px;
+        left: -50px;
+      }
+
+      .promo-banner::after {
+        content: "";
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        bottom: -30px;
+        right: -30px;
+      }
+
+      .promo-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .promo-title {
+        font-size: 32px;
+        margin-bottom: 15px;
+      }
+
+      .promo-subtitle {
+        font-size: 18px;
+        margin-bottom: 25px;
+        opacity: 0.95;
+      }
+
+      .promo-btn {
+        background: white;
+        color: #00b207;
+        padding: 15px 35px;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .promo-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Footer */
+      .footer {
+        background: #1a1a1a;
+        color: white;
+        padding: 40px 20px 20px;
+        margin-top: 50px;
+      }
+
+      .footer-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      .footer-section h3 {
+        color: #00b207;
+        margin-bottom: 15px;
+      }
+
+      .footer-section p,
+      .footer-section a {
+        color: #ccc;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+      }
+
+      .footer-section a:hover {
+        color: #00b207;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #333;
+        color: #999;
+        font-size: 14px;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 32px;
+        }
+
+        .filter-container {
+          flex-direction: column;
+        }
+
+        .search-box {
+          width: 100%;
+        }
+
+        .view-toggle {
+          margin-left: 0;
+          width: 100%;
+          justify-content: center;
+        }
+
+        .categories-grid {
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+
+        .featured-card {
+          flex-direction: column;
+        }
+
+        .featured-image {
+          width: 100%;
+          height: 150px;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .promo-title {
+          font-size: 24px;
+        }
+      }
+
+      /* Loading Animation */
+      .loading {
+        display: none;
+        text-align: center;
+        padding: 40px;
+      }
+
+      .spinner {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #00b207;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="header">
+      <div class="header-content">
+        <div class="logo">🌿 Bushys</div>
+        <div class="nav-links">
+          <a href="#" id="home">Home</a>
+          <a href="#">Shop</a>
+          <a href="#" style="opacity: 1; font-weight: 600">Categories</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <div class="cart-icon">
+            🛒
+            <span class="cart-badge">3</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Explore Our Categories</h1>
+        <p>
+          Discover fresh, organic products across all our categories. From farm
+          to table, quality you can trust.
+        </p>
+      </div>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <div class="filter-container">
+        <div class="search-box">
+          <input
+            type="text"
+            id="category-search"
+            placeholder="Search categories..."
+          />
+          <span class="search-icon">🔍</span>
+        </div>
+
+        <select class="filter-select" id="sort-by">
+          <option value="popular">Most Popular</option>
+          <option value="name">Name (A-Z)</option>
+          <option value="products">Most Products</option>
+          <option value="newest">Newest</option>
+        </select>
+
+        <select class="filter-select" id="filter-by">
+          <option value="all">All Categories</option>
+          <option value="vegetables">Vegetables</option>
+          <option value="fruits">Fruits</option>
+          <option value="meat">Meat & Fish</option>
+          <option value="dairy">Dairy & Eggs</option>
+        </select>
+
+        <div class="view-toggle">
+          <button class="view-btn active" id="grid-view">📊</button>
+          <button class="view-btn" id="list-view">📋</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+      <!-- Featured Categories -->
+      <div class="featured-section">
+        <div class="section-header">
+          <h2 class="section-title">🌟 Featured Categories</h2>
+          <button class="view-all-btn" id="view-all-featured">View All</button>
+        </div>
+
+        <div class="featured-grid">
+          <div class="featured-card" data-category="vegetables">
+            <div class="featured-image">🥬</div>
+            <div class="featured-content">
+              <div class="featured-name">Fresh Vegetables</div>
+              <div class="featured-description">
+                Farm-fresh organic vegetables delivered daily
+              </div>
+              <div class="featured-stats">
+                <span>📦 156 Products</span>
+                <span>⭐ 4.8 Rating</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="featured-card" data-category="fruits">
+            <div class="featured-image">🍎</div>
+            <div class="featured-content">
+              <div class="featured-name">Fresh Fruits</div>
+              <div class="featured-description">
+                Sweet and juicy organic fruits from local farms
+              </div>
+              <div class="featured-stats">
+                <span>📦 132 Products</span>
+                <span>⭐ 4.9 Rating</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="featured-card" data-category="meat">
+            <div class="featured-image">🥩</div>
+            <div class="featured-content">
+              <div class="featured-name">Meat & Seafood</div>
+              <div class="featured-description">
+                Premium quality fresh meat and seafood
+              </div>
+              <div class="featured-stats">
+                <span>📦 89 Products</span>
+                <span>⭐ 4.7 Rating</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- All Categories -->
+      <div class="section-header">
+        <h2 class="section-title">All Categories</h2>
+        <span class="categories-subtitle"
+          >Browse through our wide selection</span
+        >
+      </div>
+
+      <div class="categories-grid" id="categories-grid">
+        <!-- Vegetables & Fruits -->
+        <div class="category-card" data-category="leafy-greens">
+          <div class="category-image">
+            🥬
+            <span class="category-badge">New</span>
+          </div>
+          <div class="category-content">
+            <div class="category-name">Leafy Greens</div>
+            <div class="category-description">
+              Fresh lettuce, spinach, kale and more organic leafy vegetables
+            </div>
+            <div class="category-meta">
+              <span class="product-count">45 Products</span>
+              <span class="category-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="category-card" data-category="root-vegetables">
+          <div class="category-image">🥕</div>
+          <div class="category-content">
+            <div class="category-name">Root Vegetables</div>
+            <div class="category-description">
+              Carrots, potatoes, beets and other nutritious root veggies
+            </div>
+            <div class="category-meta">
+              <span class="product-count">38 Products</span>
+              <span class="category-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="category-card" data-category="exotic-fruits">
+          <div class="category-image">
+            🥭
+            <span class="category-badge">Hot</span>
+          </div>
+          <div class="category-content">
+            <div class="category-name">Exotic Fruits</div>
+            <div class="category-description">
+              Mango, dragon fruit, passion fruit and tropical delights
+            </div>
+            <div class="category-meta">
+              <span class="product-count">52 Products</span>
+              <span class="category-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="category-card" data-category="berries">
+          <div class="category-image">🍓</div>
+          <div class="category-content">
+            <div class="category-name">Berries</div>
+            <div class="category-description">
+              Strawberries, blueberries, raspberries and more
+            </div>
+            <div class="category-meta">
+              <span class="product-count">28 Products</span>
+              <span class="category-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="category-card" data-category="citrus">
+          <div class="category-image">🍊</div>
+          <div class="category-content">
+            <div class="category-name">Citrus Fruits</div>
+            <div class="category-description">
+              Oranges, lemons, limes and vitamin C rich fruits
+            </div>
+            <div class="category-meta">
+              <span class="product-count">34 Products</span>
+              <span class="category-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="category-card" data-category="apples">
+          <div class="category-image">🍎</div>
+          <div class="category-content">
+            <div class="category-name">Apples & Pears</div>
+            <div class="category-description">
+              Crisp and sweet varieties from local orchards
+            </div>
+            <div class="category-meta">
+              <span class="product-count">41 Products</span>
+              <span class="category-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dairy & Eggs -->
+        <div class="category-card" data-category="dairy">
+          <div class="category-image">🥛</div>
+          <div class="category-content">
+            <div class="category-name">Milk & Dairy</div>
+            <div class="category-description">
+              Fresh milk, yogurt, cheese from organic farms
+            </div>
+            <div class="category-meta">
+              <span class="product-count">67 Products</span>
+              <span class="category-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="category-card" data-category="eggs">
+          <div class="category-image">🥚</div>
+          <div class="category-content">
+            <div class="category-name">Farm Fresh Eggs</div>
+            <div class="category-description">
+              Free-range organic eggs from happy chickens
+            </div>
+            <div class="category-meta">
+              <span class="product-count">15 Products</span>
+              <span class="category-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Meat & Seafood -->
+        <div class="category-card" data-category="chicken">
+          <div class="category-image">🍗</div>
+          <div class="category-content">
+            <div class="category-name">Poultry</div>
+            <div class="category-description">
+              Fresh chicken and turkey from certified farms
+            </div>
+            <div class="category-meta">
+              <span class="product-count">32 Products</span>
+              <span class="category-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="category-card" data-category="beef">
+          <div class="category-image">🥩</div>
+          <div class="category-content">
+            <div class="category-name">Red Meat</div>
+            <div class="category-description">
+              Premium beef, lamb and grass-fed meats
+            </div>
+            <div class="category-meta">
+              <span class="product-count">29 Products</span>
+              <span class="category-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="category-card" data-category="seafood">
+          <div class="category-image">🐟</div>
+          <div class="category-content">
+            <div class="category-name">Fresh Seafood</div>
+            <div class="category-description">
+              Ocean-fresh fish, shrimp and shellfish daily
+            </div>
+            <div class="category-meta">
+              <span class="product-count">48 Products</span>
+              <span class="category-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pantry & Staples -->
+        <div class="category-card" data-category="grains">
+          <div class="category-image">🌾</div>
+          <div class="category-content">
+            <div class="category-name">Grains & Rice</div>
+            <div class="category-description">
+              Organic rice, quinoa, oats and whole grains
+            </div>
+            <div class="category-meta">
+              <span class="product-count">56 Products</span>
+              <span class="category-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="category-card" data-category="bakery">
+          <div class="category-image">🍞</div>
+          <div class="category-content">
+            <div class="category-name">Bread & Bakery</div>
+            <div class="category-description">
+              Fresh baked bread, pastries and baked goods
+            </div>
+            <div class="category-meta">
+              <span class="product-count">43 Products</span>
+              <span class="category-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="category-card" data-category="snacks">
+          <div class="category-image">🍿</div>
+          <div class="category-content">
+            <div class="category-name">Healthy Snacks</div>
+            <div class="category-description">
+              Nuts, dried fruits and organic snack options
+            </div>
+            <div class="category-meta">
+              <span class="product-count">71 Products</span>
+              <span class="category-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="category-card" data-category="beverages">
+          <div class="category-image">🧃</div>
+          <div class="category-content">
+            <div class="category-name">Beverages</div>
+            <div class="category-description">
+              Fresh juices, smoothies and healthy drinks
+            </div>
+            <div class="category-meta">
+              <span class="product-count">38 Products</span>
+              <span class="category-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="category-card" data-category="frozen">
+          <div class="category-image">🧊</div>
+          <div class="category-content">
+            <div class="category-name">Frozen Foods</div>
+            <div class="category-description">
+              Frozen vegetables, fruits and ready meals
+            </div>
+            <div class="category-meta">
+              <span class="product-count">54 Products</span>
+              <span class="category-arrow">→</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Promotional Banner -->
+      <div class="promo-banner">
+        <div class="promo-content">
+          <div class="promo-title">🎉 Special Offer This Week!</div>
+          <div class="promo-subtitle">
+            Get up to 30% OFF on all organic vegetables and fruits
+          </div>
+          <button class="promo-btn" id="shop-now">Shop Now</button>
+        </div>
+      </div>
+
+      <!-- Loading State -->
+      <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p>Loading more categories...</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>🌿 Bushys</h3>
+          <p>
+            Your trusted source for fresh, organic products delivered right to
+            your doorstep.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <a href="#">About Us</a>
+          <a href="#">Shop</a>
+          <a href="#">Categories</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer-section">
+          <h3>Customer Service</h3>
+          <a href="#">FAQs</a>
+          <a href="#">Shipping Info</a>
+          <a href="#">Returns</a>
+          <a href="#">Track Order</a>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>📧 info@ttttttt.com</p>
+          <p>📞 +880 1817770000</p>
+          <p>📍 Dhaka, Bangladesh</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ecobazar. All rights reserved.</p>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll(".category-card").forEach((card) => {
+        card.addEventListener("click", function () {
+          const category = this.getAttribute("data-category");
+          console.log("Category clicked:", category);
+        });
+      });
+
+      document.querySelectorAll(".featured-card").forEach((card) => {
+        card.addEventListener("click", function () {
+          const category = this.getAttribute("data-category");
+          console.log("Featured category clicked:", category);
+        });
+      });
+
+      const searchInput = document.getElementById("category-search");
+      searchInput?.addEventListener("input", function (e) {
+        const searchTerm = e.target.value.toLowerCase();
+        console.log("Searching for:", searchTerm);
+      });
+
+      const sortSelect = document.getElementById("sort-by");
+      sortSelect?.addEventListener("change", function (e) {
+        const sortBy = e.target.value;
+        console.log("Sort by:", sortBy);
+      });
+
+      const filterSelect = document.getElementById("filter-by");
+      filterSelect?.addEventListener("change", function (e) {
+        const filterBy = e.target.value;
+        console.log("Filter by:", filterBy);
+      });
+
+      const gridViewBtn = document.getElementById("grid-view");
+      const listViewBtn = document.getElementById("list-view");
+
+      gridViewBtn?.addEventListener("click", function () {
+        this.classList.add("active");
+        listViewBtn.classList.remove("active");
+        console.log("Grid view activated");
+      });
+
+      listViewBtn?.addEventListener("click", function () {
+        this.classList.add("active");
+        gridViewBtn.classList.remove("active");
+        console.log("List view activated");
+      });
+
+      document
+        .getElementById("view-all-featured")
+        ?.addEventListener("click", function () {
+          console.log("View all featured clicked");
+        });
+
+      document
+        .getElementById("shop-now")
+        ?.addEventListener("click", function () {
+          console.log("Shop now clicked");
+        });
+      document
+        .querySelector(".cart-icon")
+        ?.addEventListener("click", function () {
+          console.log("Cart clicked");
+        });
+
+      const homeElm = document.querySelector("#home");
+
+      homeElm.addEventListener("click", () => {
+        window.location.href = "index.html";
+      });
+    </script>
+  </body>
+</html>
