@@ -49,19 +49,31 @@
             </span>
           </div>
 
-          <span id="wish-list" class="flex items-center h-80px">
+          <span id="wish-list" class="flex items-center h-80px relative">
             <img class="h-[48px]" src="private/icon-01.svg" alt="" />
             <div id="text">
               <p class="text-white text-[12px] ml-[10px]">Wishlist</p>
               <h4 class="text-white text-[16px] ml-[10px]">My Itemert</h4>
             </div>
+            <span
+                class="absolute top-1 right-21 px-1 py-0.5 rounded-[50%] bg-[#F9C819] w-4 h-4 text-[10px] text-[#1E885B] flex justify-center items-center"
+               id="wish-count" >0</span>
           </span>
 
-          <span id="Total" class="flex items-center h-80px">
+          <span id="Total" class="flex items-center h-80px relative">
             <img class="h-[48px]" src="private/icon-02.svg" alt="" />
             <div id="text">
               <p class="text-white text-[12px] ml-[10px]">Total</p>
-              <h4 class="text-white text-[16px] ml-[10px]">৳200.99</h4>
+              <span
+                id="totatl-cart-money"
+                class="text-white text-[16px] ml-[10px]"
+                >৳00.00</span
+              >
+
+              <span
+                class="absolute top-0 right-14 px-1 py-0.5 rounded-[50%] bg-[#F9C819] w-4 h-4 text-[10px] text-[#1E885B] flex justify-center items-center"
+               id="cart-count" >0</span
+              >
             </div>
           </span>
 
@@ -118,7 +130,7 @@
                 </span>
               </div>
             </div>
-            <div class="bg-[#E6E6E6] ml-[382px]">
+            <div class="bg-[#E6E6E6] ml-[367px]">
               <span class="set-delevery">
                 <i class="fa-solid fa-location-dot text-green-500"></i>
                 <span>Set your delivery location</span>
@@ -217,7 +229,9 @@
         </div>
 
         <!-- Slide 1 -->
-        <div class="w-full px-[60px] mx-auto absolute top-[240px] slide block transition-opacity duration-700 ease-in-out">
+        <div
+          class="w-full px-[60px] mx-auto absolute top-[240px] slide block transition-opacity duration-700 ease-in-out"
+        >
           <div class="my-[50px] flex gap-[24px]">
             <div
               class="w-[1100px] h-[424px] bg-[#C4F6C8] pt-[52px] pl-[60px] pr-[60px] pb-[51px] rounded-[24px] relative flex-shrink-0"
@@ -290,7 +304,9 @@
         </div>
 
         <!-- Slide 2 -->
-        <div class="w-full px-[60px] mx-auto absolute top-[240px] slide hidden transition-opacity duration-700 ease-in-out">
+        <div
+          class="w-full px-[60px] mx-auto absolute top-[240px] slide hidden transition-opacity duration-700 ease-in-out"
+        >
           <div class="my-[50px] flex gap-[24px]">
             <div
               class="w-[1100px] h-[424px] bg-[#FFE5E5] pt-[52px] pl-[60px] pr-[60px] pb-[51px] rounded-[24px] relative flex-shrink-0"
@@ -363,7 +379,9 @@
         </div>
 
         <!-- Slide 3 -->
-        <div class="w-full px-[60px] mx-auto absolute top-[240px] slide hidden transition-opacity duration-700 ease-in-out">
+        <div
+          class="w-full px-[60px] mx-auto absolute top-[240px] slide hidden transition-opacity duration-700 ease-in-out"
+        >
           <div class="my-[50px] flex gap-[24px]">
             <div
               class="w-[1100px] h-[424px] bg-[#E3F2FD] pt-[52px] pl-[60px] pr-[60px] pb-[51px] rounded-[24px] relative flex-shrink-0"
@@ -436,7 +454,9 @@
         </div>
 
         <!-- Slide 4 -->
-        <div class="w-full px-[60px] mx-auto absolute top-[240px] slide hidden transition-opacity duration-700 ease-in-out">
+        <div
+          class="w-full px-[60px] mx-auto absolute top-[240px] slide hidden transition-opacity duration-700 ease-in-out"
+        >
           <div class="my-[50px] flex gap-[24px]">
             <div
               class="w-[1100px] h-[424px] bg-[#FFF3E0] pt-[52px] pl-[60px] pr-[60px] pb-[51px] rounded-[24px] relative flex-shrink-0"
@@ -509,7 +529,9 @@
         </div>
 
         <!-- Slide 5 -->
-        <div class="w-full px-[60px] mx-auto absolute top-[240px] slide hidden transition-opacity duration-700 ease-in-out">
+        <div
+          class="w-full px-[60px] mx-auto absolute top-[240px] slide hidden transition-opacity duration-700 ease-in-out"
+        >
           <div class="my-[50px] flex gap-[24px]">
             <div
               class="w-[1100px] h-[424px] bg-[#F3E5F5] pt-[52px] pl-[60px] pr-[60px] pb-[51px] rounded-[24px] relative flex-shrink-0"
@@ -582,7 +604,6 @@
         </div>
       </div>
 
-      
       <div class="h-[500px]"></div>
 
       <!-- Slider Dots -->
@@ -611,5 +632,1071 @@
     </section>
 
     <!--Hero section end-->
+
+    <!--Pouular product secton start-->
+
+    <section>
+      <div class="container max-w-full box-border px-[60px] mt-[26px]">
+        <div class="flex w-full">
+          <div class="w-1/2">
+            <h3 class="text-[28px] text-black">Popular Products</h3>
+          </div>
+          <div class="w-1/2 flex gap-3 justify-end">
+            <span><p class="text-[16px] text-[#00B207]">All</p></span>
+            <span><p class="text-[16px] text-[#4D4D4D]">Vegetables</p></span>
+            <span><p class="text-[16px] text-[#4D4D4D]">Fruits</p></span>
+            <span
+              ><p class="text-[16px] text-[#4D4D4D]">Milk & Dairies</p></span
+            >
+            <span><p class="text-[16px] text-[#4D4D4D]">Coffee & Teas</p></span>
+            <span><p class="text-[16px] text-[#4D4D4D]">Meats</p></span>
+            <span><p class="text-[16px] text-[#4D4D4D]">Pet Foods</p></span>
+          </div>
+        </div>
+
+        <div class="mt-[32px] flex flex-wrap justify-between">
+          <span
+            ><div
+              class="relative w-[240px] h-[385px] rounded-[8px] px-[27.5px] pt-[12px] pb-[16px] border border-[#D9D9D9]"
+            >
+              <div class="flex">
+                <div class="w-1/2">
+                  <p class="text-[12px] text-[#808080]">Vegetables</p>
+                </div>
+                <div class="w-1/2 flex justify-end">
+                  <span class="heart"><i class="fa-solid fa-heart"></i></span>
+                </div>
+              </div>
+
+              <div class="mt-[150px]">
+                <div class="flex flex-col inline-block">
+                  <p
+                    class="py-[4px] px-[8px] border border-[#CCCCCC] rounded-sm text-[12px] text-[#808080] w-[52px]"
+                  >
+                    Per kg
+                  </p>
+                  <div class="flex gap-3 mt-2 items-center">
+                    <span class="money"
+                      ><p class="text-[18px] text-[#00B207]">৳68</p></span
+                    >
+                    <p class="text-[14px] text-[#999999] line-through">৳50</p>
+
+                    <div
+                      class="relative ml-3"
+                      style="width: 48px; height: 22px"
+                    >
+                      <div
+                        class="absolute -left-2.5 top-0 w-0 h-0 border-t-[11px] border-t-transparent border-r-[10px] border-r-red-600 border-b-[11px] border-b-transparent"
+                      ></div>
+                      <div
+                        class="w-full h-full bg-red-600 text-white font-bold text-[12px] flex items-center justify-center rounded-r-sm relative"
+                      >
+                        -20%
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-2">
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Big Potatoes Fresh Premium
+                    </p>
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Fruit and Products Russet I..
+                    </p>
+                  </div>
+
+                  <div class="flex mt-2 gap-2 items-center">
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-gray-300"></i>
+                    <span><p>(4.00)</p></span>
+                  </div>
+
+                  <button
+                    class="text-[#00B207] text-[14px] py-[10px] px-[43px] bg-[#DAF2DC] rounded-[6px] mt-1 add-cart w-full"
+                    data-price="68.00"
+                  >
+                    <i class="fa-solid fa-plus mr-3"></i
+                    ><span class="cart-text">Add to Cart</span>
+                  </button>
+
+                  <img
+                    src="public/img-poteto.png"
+                    alt=""
+                    class="absolute top-11 left-13"
+                  />
+                </div>
+              </div></div
+          ></span>
+          <span
+            ><div
+              class="relative w-[240px] h-[385px] rounded-[8px] px-[27.5px] pt-[12px] pb-[16px] border border-[#D9D9D9]"
+            >
+              <div class="flex">
+                <div class="w-1/2">
+                  <p class="text-[12px] text-[#808080]">Vegetables</p>
+                </div>
+                <div class="w-1/2 flex justify-end">
+                  <span class="heart"><i class="fa-solid fa-heart"></i></span>
+                </div>
+              </div>
+
+              <div class="mt-[150px]">
+                <div class="flex flex-col inline-block">
+                  <p
+                    class="py-[4px] px-[8px] border border-[#CCCCCC] rounded-sm text-[12px] text-[#808080] w-[52px]"
+                  >
+                    Per kg
+                  </p>
+                  <div class="flex gap-3 mt-2 items-center">
+                    <span class="money"
+                      ><p class="text-[18px] text-[#00B207]">৳18</p></span
+                    >
+                    <p class="text-[14px] text-[#999999] line-through">৳50</p>
+
+                    <div
+                      class="relative ml-3"
+                      style="width: 48px; height: 22px"
+                    >
+                      <div
+                        class="absolute -left-2.5 top-0 w-0 h-0 border-t-[11px] border-t-transparent border-r-[10px] border-r-red-600 border-b-[11px] border-b-transparent"
+                      ></div>
+                      <div
+                        class="w-full h-full bg-red-600 text-white font-bold text-[12px] flex items-center justify-center rounded-r-sm relative"
+                      >
+                        -20%
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-2">
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Big Potatoes Fresh Premium
+                    </p>
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Fruit and Products Russet I..
+                    </p>
+                  </div>
+
+                  <div class="flex mt-2 gap-2 items-center">
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-gray-300"></i>
+                    <span><p>(4.00)</p></span>
+                  </div>
+
+                  <button
+                    class="text-[#00B207] text-[14px] py-[10px] px-[43px] bg-[#DAF2DC] rounded-[6px] mt-1 add-cart w-full"
+                    data-price="19.00"
+                  >
+                    <i class="fa-solid fa-plus mr-3"></i
+                    ><span class="cart-text">Add to Cart</span>
+                  </button>
+
+                  <img
+                    src="public/orange.png"
+                    alt=""
+                    class="absolute top-11 left-13"
+                  />
+                </div>
+              </div></div
+          ></span>
+          <span
+            ><div
+              class="relative w-[240px] h-[385px] rounded-[8px] px-[27.5px] pt-[12px] pb-[16px] border border-[#D9D9D9]"
+            >
+              <div class="flex">
+                <div class="w-1/2">
+                  <p class="text-[12px] text-[#808080]">Vegetables</p>
+                </div>
+                <div class="w-1/2 flex justify-end">
+                  <span class="heart"><i class="fa-solid fa-heart"></i></span>
+                </div>
+              </div>
+
+              <div class="mt-[150px]">
+                <div class="flex flex-col inline-block">
+                  <p
+                    class="py-[4px] px-[8px] border border-[#CCCCCC] rounded-sm text-[12px] text-[#808080] w-[52px]"
+                  >
+                    Per kg
+                  </p>
+                  <div class="flex gap-3 mt-2 items-center">
+                    <span class="money"
+                      ><p class="text-[18px] text-[#00B207]">৳40</p></span
+                    >
+                    <p class="text-[14px] text-[#999999] line-through">৳50</p>
+
+                    <div
+                      class="relative ml-3"
+                      style="width: 48px; height: 22px"
+                    >
+                      <div
+                        class="absolute -left-2.5 top-0 w-0 h-0 border-t-[11px] border-t-transparent border-r-[10px] border-r-red-600 border-b-[11px] border-b-transparent"
+                      ></div>
+                      <div
+                        class="w-full h-full bg-red-600 text-white font-bold text-[12px] flex items-center justify-center rounded-r-sm relative"
+                      >
+                        -20%
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-2">
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Big Potatoes Fresh Premium
+                    </p>
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Fruit and Products Russet I..
+                    </p>
+                  </div>
+
+                  <div class="flex mt-2 gap-2 items-center">
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-gray-300"></i>
+                    <span><p>(4.00)</p></span>
+                  </div>
+
+                  <button
+                    class="text-[#00B207] text-[14px] py-[10px] px-[43px] bg-[#DAF2DC] rounded-[6px] mt-1 add-cart w-full"
+                    data-price="40.00"
+                  >
+                    <i class="fa-solid fa-plus mr-3"></i
+                    ><span class="cart-text">Add to Cart</span>
+                  </button>
+
+                  <img
+                    src="public/mango.png"
+                    alt=""
+                    class="absolute top-11 left-13"
+                  />
+                </div>
+              </div></div
+          ></span>
+          <span
+            ><div
+              class="relative w-[240px] h-[385px] rounded-[8px] px-[27.5px] pt-[12px] pb-[16px] border border-[#D9D9D9]"
+            >
+              <div class="flex">
+                <div class="w-1/2">
+                  <p class="text-[12px] text-[#808080]">Vegetables</p>
+                </div>
+                <div class="w-1/2 flex justify-end">
+                  <span class="heart"><i class="fa-solid fa-heart"></i></span>
+                </div>
+              </div>
+
+              <div class="mt-[150px]">
+                <div class="flex flex-col inline-block">
+                  <p
+                    class="py-[4px] px-[8px] border border-[#CCCCCC] rounded-sm text-[12px] text-[#808080] w-[52px]"
+                  >
+                    Per kg
+                  </p>
+                  <div class="flex gap-3 mt-2 items-center">
+                    <span class="money"
+                      ><p class="text-[18px] text-[#00B207]">৳40</p></span
+                    >
+                    <p class="text-[14px] text-[#999999] line-through">৳50</p>
+
+                    <div
+                      class="relative ml-3"
+                      style="width: 48px; height: 22px"
+                    >
+                      <div
+                        class="absolute -left-2.5 top-0 w-0 h-0 border-t-[11px] border-t-transparent border-r-[10px] border-r-red-600 border-b-[11px] border-b-transparent"
+                      ></div>
+                      <div
+                        class="w-full h-full bg-red-600 text-white font-bold text-[12px] flex items-center justify-center rounded-r-sm relative"
+                      >
+                        -20%
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-2">
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Big Potatoes Fresh Premium
+                    </p>
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Fruit and Products Russet I..
+                    </p>
+                  </div>
+
+                  <div class="flex mt-2 gap-2 items-center">
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-gray-300"></i>
+                    <span><p>(4.00)</p></span>
+                  </div>
+
+                  <button
+                    class="text-[#00B207] text-[14px] py-[10px] px-[43px] bg-[#DAF2DC] rounded-[6px] mt-1 add-cart w-full"
+                    data-price="40.00"
+                  >
+                    <i class="fa-solid fa-plus mr-3"></i
+                    ><span class="cart-text">Add to Cart</span>
+                  </button>
+
+                  <img
+                    src="public/apple-green.png"
+                    alt=""
+                    class="absolute top-11 left-13"
+                  />
+                </div>
+              </div></div
+          ></span>
+          <span
+            ><div
+              class="relative w-[240px] h-[385px] rounded-[8px] px-[27.5px] pt-[12px] pb-[16px] border border-[#D9D9D9]"
+            >
+              <div class="flex">
+                <div class="w-1/2">
+                  <p class="text-[12px] text-[#808080]">Vegetables</p>
+                </div>
+                <div class="w-1/2 flex justify-end">
+                  <span class="heart"><i class="fa-solid fa-heart"></i></span>
+                </div>
+              </div>
+
+              <div class="mt-[150px]">
+                <div class="flex flex-col inline-block">
+                  <p
+                    class="py-[4px] px-[8px] border border-[#CCCCCC] rounded-sm text-[12px] text-[#808080] w-[52px]"
+                  >
+                    Per kg
+                  </p>
+                  <div class="flex gap-3 mt-2 items-center">
+                    <span class="money"
+                      ><p class="text-[18px] text-[#00B207]">৳89</p></span
+                    >
+                    <p class="text-[14px] text-[#999999] line-through">৳50</p>
+
+                    <div
+                      class="relative ml-3"
+                      style="width: 48px; height: 22px"
+                    >
+                      <div
+                        class="absolute -left-2.5 top-0 w-0 h-0 border-t-[11px] border-t-transparent border-r-[10px] border-r-red-600 border-b-[11px] border-b-transparent"
+                      ></div>
+                      <div
+                        class="w-full h-full bg-red-600 text-white font-bold text-[12px] flex items-center justify-center rounded-r-sm relative"
+                      >
+                        -20%
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-2">
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Big Potatoes Fresh Premium
+                    </p>
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Fruit and Products Russet I..
+                    </p>
+                  </div>
+
+                  <div class="flex mt-2 gap-2 items-center">
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-gray-300"></i>
+                    <span><p>(4.00)</p></span>
+                  </div>
+
+                  <button
+                    class="text-[#00B207] text-[14px] py-[10px] px-[43px] bg-[#DAF2DC] rounded-[6px] mt-1 add-cart w-full"
+                    data-price="89.00"
+                  >
+                    <i class="fa-solid fa-plus mr-3"></i
+                    ><span class="cart-text">Add to Cart</span>
+                  </button>
+
+                  <img
+                    src="public/corn.png"
+                    alt=""
+                    class="absolute top-11 left-13"
+                  />
+                </div>
+              </div></div
+          ></span>
+          <span
+            ><div
+              class="relative w-[240px] h-[385px] rounded-[8px] px-[27.5px] pt-[12px] pb-[16px] border border-[#D9D9D9]"
+            >
+              <div class="flex">
+                <div class="w-1/2">
+                  <p class="text-[12px] text-[#808080]">Vegetables</p>
+                </div>
+                <div class="w-1/2 flex justify-end">
+                 <span class="heart"><i class="fa-solid fa-heart"></i></span>
+                </div>
+              </div>
+
+              <div class="mt-[150px]">
+                <div class="flex flex-col inline-block">
+                  <p
+                    class="py-[4px] px-[8px] border border-[#CCCCCC] rounded-sm text-[12px] text-[#808080] w-[52px]"
+                  >
+                    Per kg
+                  </p>
+                  <div class="flex gap-3 mt-2 items-center">
+                    <span class="money"
+                      ><p class="text-[18px] text-[#00B207]">৳110</p></span
+                    >
+                    <p class="text-[14px] text-[#999999] line-through">৳50</p>
+
+                    <div
+                      class="relative ml-3"
+                      style="width: 48px; height: 22px"
+                    >
+                      <div
+                        class="absolute -left-2.5 top-0 w-0 h-0 border-t-[11px] border-t-transparent border-r-[10px] border-r-red-600 border-b-[11px] border-b-transparent"
+                      ></div>
+                      <div
+                        class="w-full h-full bg-red-600 text-white font-bold text-[12px] flex items-center justify-center rounded-r-sm relative"
+                      >
+                        -20%
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-2">
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Big Potatoes Fresh Premium
+                    </p>
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Fruit and Products Russet I..
+                    </p>
+                  </div>
+
+                  <div class="flex mt-2 gap-2 items-center">
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-gray-300"></i>
+                    <span><p>(4.00)</p></span>
+                  </div>
+
+                  <button
+                    class="text-[#00B207] text-[14px] py-[10px] px-[43px] bg-[#DAF2DC] rounded-[6px] mt-1 add-cart w-full"
+                    data-price="110.00"
+                  >
+                    <i class="fa-solid fa-plus mr-3"></i
+                    ><span class="cart-text">Add to Cart</span>
+                  </button>
+
+                  <img
+                    src="public/letaus.png"
+                    alt=""
+                    class="absolute top-11 left-13"
+                  />
+                </div>
+              </div></div
+          ></span>
+          <span
+            ><div
+              class="relative w-[240px] h-[385px] rounded-[8px] px-[27.5px] pt-[12px] pb-[16px] border border-[#D9D9D9]"
+            >
+              <div class="flex">
+                <div class="w-1/2">
+                  <p class="text-[12px] text-[#808080]">Vegetables</p>
+                </div>
+                <div class="w-1/2 flex justify-end">
+                  <span class="heart"><i class="fa-solid fa-heart"></i></span>
+                </div>
+              </div>
+
+              <div class="mt-[150px]">
+                <div class="flex flex-col inline-block">
+                  <p
+                    class="py-[4px] px-[8px] border border-[#CCCCCC] rounded-sm text-[12px] text-[#808080] w-[52px]"
+                  >
+                    Per kg
+                  </p>
+                  <div class="flex gap-3 mt-2 items-center">
+                    <span class="money"
+                      ><p class="text-[18px] text-[#00B207]">৳40</p></span
+                    >
+                    <p class="text-[14px] text-[#999999] line-through">৳50</p>
+
+                    <div
+                      class="relative ml-3"
+                      style="width: 48px; height: 22px"
+                    >
+                      <div
+                        class="absolute -left-2.5 top-0 w-0 h-0 border-t-[11px] border-t-transparent border-r-[10px] border-r-red-600 border-b-[11px] border-b-transparent"
+                      ></div>
+                      <div
+                        class="w-full h-full bg-red-600 text-white font-bold text-[12px] flex items-center justify-center rounded-r-sm relative"
+                      >
+                        -20%
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-2">
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Big Potatoes Fresh Premium
+                    </p>
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Fruit and Products Russet I..
+                    </p>
+                  </div>
+
+                  <div class="flex mt-2 gap-2 items-center">
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-gray-300"></i>
+                    <span><p>(4.00)</p></span>
+                  </div>
+
+                  <button
+                    class="text-[#00B207] text-[14px] py-[10px] px-[43px] bg-[#DAF2DC] rounded-[6px] mt-1 add-cart w-full"
+                    data-price="40.00"
+                  >
+                    <i class="fa-solid fa-plus mr-3"></i
+                    ><span class="cart-text">Add to Cart</span>
+                  </button>
+
+                  <img
+                    src="public/dhoniya.png"
+                    alt=""
+                    class="absolute top-11 left-13"
+                  />
+                </div>
+              </div></div
+          ></span>
+        </div>
+
+        <div class="mt-[32px] flex flex-wrap justify-between">
+          <span
+            ><div
+              class="relative w-[240px] h-[385px] rounded-[8px] px-[27.5px] pt-[12px] pb-[16px] border border-[#D9D9D9]"
+            >
+              <div class="flex">
+                <div class="w-1/2">
+                  <p class="text-[12px] text-[#808080]">Vegetables</p>
+                </div>
+                <div class="w-1/2 flex justify-end">
+                  <span class="heart"><i class="fa-solid fa-heart"></i></span>
+                </div>
+              </div>
+
+              <div class="mt-[150px]">
+                <div class="flex flex-col inline-block">
+                  <p
+                    class="py-[4px] px-[8px] border border-[#CCCCCC] rounded-sm text-[12px] text-[#808080] w-[52px]"
+                  >
+                    Per kg
+                  </p>
+                  <div class="flex gap-3 mt-2 items-center">
+                    <span class="money"
+                      ><p class="text-[18px] text-[#00B207]">৳40</p></span
+                    >
+                    <p class="text-[14px] text-[#999999] line-through">৳50</p>
+
+                    <div
+                      class="relative ml-3"
+                      style="width: 48px; height: 22px"
+                    >
+                      <div
+                        class="absolute -left-2.5 top-0 w-0 h-0 border-t-[11px] border-t-transparent border-r-[10px] border-r-red-600 border-b-[11px] border-b-transparent"
+                      ></div>
+                      <div
+                        class="w-full h-full bg-red-600 text-white font-bold text-[12px] flex items-center justify-center rounded-r-sm relative"
+                      >
+                        -20%
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-2">
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Big Potatoes Fresh Premium
+                    </p>
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Fruit and Products Russet I..
+                    </p>
+                  </div>
+
+                  <div class="flex mt-2 gap-2 items-center">
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-gray-300"></i>
+                    <span><p>(4.00)</p></span>
+                  </div>
+
+                  <button
+                    class="text-[#00B207] text-[14px] py-[10px] px-[43px] bg-[#DAF2DC] rounded-[6px] mt-1 add-cart w-full"
+                    data-price="40.00"
+                  >
+                    <i class="fa-solid fa-plus mr-3"></i
+                    ><span class="cart-text">Add to Cart</span>
+                  </button>
+
+                  <img
+                    src="public/img-poteto.png"
+                    alt=""
+                    class="absolute top-11 left-13"
+                  />
+                </div>
+              </div></div
+          ></span>
+          <span
+            ><div
+              class="relative w-[240px] h-[385px] rounded-[8px] px-[27.5px] pt-[12px] pb-[16px] border border-[#D9D9D9]"
+            >
+              <div class="flex">
+                <div class="w-1/2">
+                  <p class="text-[12px] text-[#808080]">Vegetables</p>
+                </div>
+                <div class="w-1/2 flex justify-end">
+                  <span class="heart"><i class="fa-solid fa-heart"></i></span>
+                </div>
+              </div>
+
+              <div class="mt-[150px]">
+                <div class="flex flex-col inline-block">
+                  <p
+                    class="py-[4px] px-[8px] border border-[#CCCCCC] rounded-sm text-[12px] text-[#808080] w-[52px]"
+                  >
+                    Per kg
+                  </p>
+                  <div class="flex gap-3 mt-2 items-center">
+                    <span class="money"
+                      ><p class="text-[18px] text-[#00B207]">৳80</p></span
+                    >
+                    <p class="text-[14px] text-[#999999] line-through">৳50</p>
+
+                    <div
+                      class="relative ml-3"
+                      style="width: 48px; height: 22px"
+                    >
+                      <div
+                        class="absolute -left-2.5 top-0 w-0 h-0 border-t-[11px] border-t-transparent border-r-[10px] border-r-red-600 border-b-[11px] border-b-transparent"
+                      ></div>
+                      <div
+                        class="w-full h-full bg-red-600 text-white font-bold text-[12px] flex items-center justify-center rounded-r-sm relative"
+                      >
+                        -20%
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-2">
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Big Potatoes Fresh Premium
+                    </p>
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Fruit and Products Russet I..
+                    </p>
+                  </div>
+
+                  <div class="flex mt-2 gap-2 items-center">
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-gray-300"></i>
+                    <span><p>(4.00)</p></span>
+                  </div>
+
+                  <button
+                    class="text-[#00B207] text-[14px] py-[10px] px-[43px] bg-[#DAF2DC] rounded-[6px] mt-1 add-cart w-full"
+                    data-price="80.00"
+                  >
+                    <i class="fa-solid fa-plus mr-3"></i
+                    ><span class="cart-text">Add to Cart</span>
+                  </button>
+
+                  <img
+                    src="public/orange.png"
+                    alt=""
+                    class="absolute top-11 left-13"
+                  />
+                </div>
+              </div></div
+          ></span>
+          <span
+            ><div
+              class="relative w-[240px] h-[385px] rounded-[8px] px-[27.5px] pt-[12px] pb-[16px] border border-[#D9D9D9]"
+            >
+              <div class="flex">
+                <div class="w-1/2">
+                  <p class="text-[12px] text-[#808080]">Vegetables</p>
+                </div>
+                <div class="w-1/2 flex justify-end">
+                  <span class="heart"><i class="fa-solid fa-heart"></i></span>
+                </div>
+              </div>
+
+              <div class="mt-[150px]">
+                <div class="flex flex-col inline-block">
+                  <p
+                    class="py-[4px] px-[8px] border border-[#CCCCCC] rounded-sm text-[12px] text-[#808080] w-[52px]"
+                  >
+                    Per kg
+                  </p>
+                  <div class="flex gap-3 mt-2 items-center">
+                    <span class="money"
+                      ><p class="text-[18px] text-[#00B207]">৳55</p></span
+                    >
+                    <p class="text-[14px] text-[#999999] line-through">৳50</p>
+
+                    <div
+                      class="relative ml-3"
+                      style="width: 48px; height: 22px"
+                    >
+                      <div
+                        class="absolute -left-2.5 top-0 w-0 h-0 border-t-[11px] border-t-transparent border-r-[10px] border-r-red-600 border-b-[11px] border-b-transparent"
+                      ></div>
+                      <div
+                        class="w-full h-full bg-red-600 text-white font-bold text-[12px] flex items-center justify-center rounded-r-sm relative"
+                      >
+                        -20%
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-2">
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Big Potatoes Fresh Premium
+                    </p>
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Fruit and Products Russet I..
+                    </p>
+                  </div>
+
+                  <div class="flex mt-2 gap-2 items-center">
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-gray-300"></i>
+                    <span><p>(4.00)</p></span>
+                  </div>
+
+                  <button
+                    class="text-[#00B207] text-[14px] py-[10px] px-[43px] bg-[#DAF2DC] rounded-[6px] mt-1 add-cart w-full"
+                    data-price="55.00"
+                  >
+                    <i class="fa-solid fa-plus mr-3"></i
+                    ><span class="cart-text">Add to Cart</span>
+                  </button>
+
+                  <img
+                    src="public/moric.png"
+                    alt=""
+                    class="absolute top-11 left-13"
+                  />
+                </div>
+              </div></div
+          ></span>
+          <span
+            ><div
+              class="relative w-[240px] h-[385px] rounded-[8px] px-[27.5px] pt-[12px] pb-[16px] border border-[#D9D9D9]"
+            >
+              <div class="flex">
+                <div class="w-1/2">
+                  <p class="text-[12px] text-[#808080]">Vegetables</p>
+                </div>
+                <div class="w-1/2 flex justify-end">
+                  <span class="heart"><i class="fa-solid fa-heart"></i></span>
+                </div>
+              </div>
+
+              <div class="mt-[150px]">
+                <div class="flex flex-col inline-block">
+                  <p
+                    class="py-[4px] px-[8px] border border-[#CCCCCC] rounded-sm text-[12px] text-[#808080] w-[52px]"
+                  >
+                    Per kg
+                  </p>
+                  <div class="flex gap-3 mt-2 items-center">
+                    <span class="money"
+                      ><p class="text-[18px] text-[#00B207]">৳89</p></span
+                    >
+                    <p class="text-[14px] text-[#999999] line-through">৳50</p>
+
+                    <div
+                      class="relative ml-3"
+                      style="width: 48px; height: 22px"
+                    >
+                      <div
+                        class="absolute -left-2.5 top-0 w-0 h-0 border-t-[11px] border-t-transparent border-r-[10px] border-r-red-600 border-b-[11px] border-b-transparent"
+                      ></div>
+                      <div
+                        class="w-full h-full bg-red-600 text-white font-bold text-[12px] flex items-center justify-center rounded-r-sm relative"
+                      >
+                        -20%
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-2">
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Big Potatoes Fresh Premium
+                    </p>
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Fruit and Products Russet I..
+                    </p>
+                  </div>
+
+                  <div class="flex mt-2 gap-2 items-center">
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-gray-300"></i>
+                    <span><p>(4.00)</p></span>
+                  </div>
+
+                  <button
+                    class="text-[#00B207] text-[14px] py-[10px] px-[43px] bg-[#DAF2DC] rounded-[6px] mt-1 add-cart w-full"
+                    data-price="89.00"
+                  >
+                    <i class="fa-solid fa-plus mr-3"></i
+                    ><span class="cart-text">Add to Cart</span>
+                  </button>
+
+                  <img
+                    src="public/apple-green.png"
+                    alt=""
+                    class="absolute top-11 left-13"
+                  />
+                </div>
+              </div></div
+          ></span>
+          <span
+            ><div
+              class="relative w-[240px] h-[385px] rounded-[8px] px-[27.5px] pt-[12px] pb-[16px] border border-[#D9D9D9]"
+            >
+              <div class="flex">
+                <div class="w-1/2">
+                  <p class="text-[12px] text-[#808080]">Vegetables</p>
+                </div>
+                <div class="w-1/2 flex justify-end">
+                  <span class="heart"><i class="fa-solid fa-heart"></i></span>
+                </div>
+              </div>
+
+              <div class="mt-[150px]">
+                <div class="flex flex-col inline-block">
+                  <p
+                    class="py-[4px] px-[8px] border border-[#CCCCCC] rounded-sm text-[12px] text-[#808080] w-[52px]"
+                  >
+                    Per kg
+                  </p>
+                  <div class="flex gap-3 mt-2 items-center">
+                    <span class="money"
+                      ><p class="text-[18px] text-[#00B207]">৳37</p></span
+                    >
+                    <p class="text-[14px] text-[#999999] line-through">৳50</p>
+
+                    <div
+                      class="relative ml-3"
+                      style="width: 48px; height: 22px"
+                    >
+                      <div
+                        class="absolute -left-2.5 top-0 w-0 h-0 border-t-[11px] border-t-transparent border-r-[10px] border-r-red-600 border-b-[11px] border-b-transparent"
+                      ></div>
+                      <div
+                        class="w-full h-full bg-red-600 text-white font-bold text-[12px] flex items-center justify-center rounded-r-sm relative"
+                      >
+                        -20%
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-2">
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Big Potatoes Fresh Premium
+                    </p>
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Fruit and Products Russet I..
+                    </p>
+                  </div>
+
+                  <div class="flex mt-2 gap-2 items-center">
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-gray-300"></i>
+                    <span><p>(4.00)</p></span>
+                  </div>
+
+                  <button
+                    class="text-[#00B207] text-[14px] py-[10px] px-[43px] bg-[#DAF2DC] rounded-[6px] mt-1 add-cart w-full"
+                    data-price="37.00"
+                  >
+                    <i class="fa-solid fa-plus mr-3"></i
+                    ><span class="cart-text">Add to Cart</span>
+                  </button>
+
+                  <img
+                    src="public/pulkopi.png"
+                    alt=""
+                    class="absolute top-11 left-13"
+                  />
+                </div>
+              </div></div
+          ></span>
+          <span
+            ><div
+              class="relative w-[240px] h-[385px] rounded-[8px] px-[27.5px] pt-[12px] pb-[16px] border border-[#D9D9D9]"
+            >
+              <div class="flex">
+                <div class="w-1/2">
+                  <p class="text-[12px] text-[#808080]">Vegetables</p>
+                </div>
+                <div class="w-1/2 flex justify-end">
+                  <span class="heart"><i class="fa-solid fa-heart"></i></span>
+                </div>
+              </div>
+
+              <div class="mt-[150px]">
+                <div class="flex flex-col inline-block">
+                  <p
+                    class="py-[4px] px-[8px] border border-[#CCCCCC] rounded-sm text-[12px] text-[#808080] w-[52px]"
+                  >
+                    Per kg
+                  </p>
+                  <div class="flex gap-3 mt-2 items-center">
+                    <span class="money"
+                      ><p class="text-[18px] text-[#00B207]">৳76</p></span
+                    >
+                    <p class="text-[14px] text-[#999999] line-through">৳50</p>
+
+                    <div
+                      class="relative ml-3"
+                      style="width: 48px; height: 22px"
+                    >
+                      <div
+                        class="absolute -left-2.5 top-0 w-0 h-0 border-t-[11px] border-t-transparent border-r-[10px] border-r-red-600 border-b-[11px] border-b-transparent"
+                      ></div>
+                      <div
+                        class="w-full h-full bg-red-600 text-white font-bold text-[12px] flex items-center justify-center rounded-r-sm relative"
+                      >
+                        -20%
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-2">
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Big Potatoes Fresh Premium
+                    </p>
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Fruit and Products Russet I..
+                    </p>
+                  </div>
+
+                  <div class="flex mt-2 gap-2 items-center">
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-gray-300"></i>
+                    <span><p>(4.00)</p></span>
+                  </div>
+
+                  <button
+                    class="text-[#00B207] text-[14px] py-[10px] px-[43px] bg-[#DAF2DC] rounded-[6px] mt-1 add-cart w-full"
+                    data-price="76.00"
+                  >
+                    <i class="fa-solid fa-plus mr-3"></i
+                    ><span class="cart-text">Add to Cart</span>
+                  </button>
+
+                  <img
+                    src="public/letaus.png"
+                    alt=""
+                    class="absolute top-11 left-13"
+                  />
+                </div>
+              </div></div
+          ></span>
+          <span
+            ><div
+              class="relative w-[240px] h-[385px] rounded-[8px] px-[27.5px] pt-[12px] pb-[16px] border border-[#D9D9D9]"
+            >
+              <div class="flex">
+                <div class="w-1/2">
+                  <p class="text-[12px] text-[#808080]">Vegetables</p>
+                </div>
+                <div class="w-1/2 flex justify-end">
+                  <span class="heart"><i class="fa-solid fa-heart"></i></span>
+                </div>
+              </div>
+
+              <div class="mt-[150px]">
+                <div class="flex flex-col inline-block">
+                  <p
+                    class="py-[4px] px-[8px] border border-[#CCCCCC] rounded-sm text-[12px] text-[#808080] w-[52px]"
+                  >
+                    Per kg
+                  </p>
+                  <div class="flex gap-3 mt-2 items-center">
+                    <span class="money"
+                      ><p class="text-[18px] text-[#00B207]">৳40</p></span
+                    >
+                    <p class="text-[14px] text-[#999999] line-through">৳50</p>
+                    <div
+                      class="relative ml-3"
+                      style="width: 48px; height: 22px"
+                    >
+                      <div
+                        class="absolute -left-2.5 top-0 w-0 h-0 border-t-[11px] border-t-transparent border-r-[10px] border-r-red-600 border-b-[11px] border-b-transparent"
+                      ></div>
+                      <div
+                        class="w-full h-full bg-red-600 text-white font-bold text-[12px] flex items-center justify-center rounded-r-sm relative"
+                      >
+                        -20%
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-2">
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Big Potatoes Fresh Premium
+                    </p>
+                    <p class="text-[14px] text-black leading-[20px]">
+                      Fruit and Products Russet I..
+                    </p>
+                  </div>
+
+                  <div class="flex mt-2 gap-2 items-center">
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <i class="fa-solid fa-star text-[#FDC040]"></i>
+                    <span><p>(5.00)</p></span>
+                  </div>
+
+                  <button
+                    class="text-[#00B207] text-[14px] py-[10px] px-[43px] bg-[#DAF2DC] rounded-[6px] m-0.5 add-cart w-full"
+                    data-price="40.00"
+                  >
+                    <i class="fa-solid fa-plus mr-3"></i
+                    ><span class="cart-text">Add to Cart</span>
+                  </button>
+
+                  <img
+                    src="public/begun.png"
+                    alt=""
+                    class="absolute top-11 left-13"
+                  />
+                </div>
+              </div></div
+          ></span>
+        </div>
+      </div>
+    </section>
+
+    <!--Pouular product secton end-->
   </body>
 </html>
