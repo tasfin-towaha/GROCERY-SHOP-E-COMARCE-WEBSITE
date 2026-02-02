@@ -7,7 +7,12 @@ const addcartBtns = document.querySelectorAll(".add-cart");
 const totatlCartMoney = document.querySelector("#totatl-cart-money");
 const cartcountElm = document.querySelector("#cart-count");
 const wishcountElm = document.querySelector("#wish-count");
+const daysElm = document.querySelector("#days");
+const hourElm = document.querySelector("#hour");
+const minsElm = document.querySelector("#mins");
+const secsElm = document.querySelector("#secs");
 
+//
 let slideDotIndex = 0;
 let totalMoney = 0;
 let cartCount = 0;
@@ -125,3 +130,35 @@ heartBtn.forEach((heart) => {
 });
 
 // Wish count end
+
+// sale of the month timer start
+
+const newDate = new Date("Jan 1, 2027 23:59:59").getTime();
+
+let counter = setInterval(function () {
+  let current = new Date().getTime();
+  let difference = newDate - current;
+
+  if (difference <= 0) {
+    clearInterval(counter);
+    daysElm.innerHTML = "00";
+    hourElm.innerHTML = "00";
+    minsElm.innerHTML = "00";
+    secsElm.innerHTML = "00";
+    return;
+  }
+
+  let days = Math.floor(difference / (1000 * 60 * 60 * 24));
+  let hours = Math.floor(
+    (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+  );
+  let mins = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+  let secs = Math.floor((difference % (1000 * 60)) / 1000);
+
+  daysElm.innerHTML = String(days).padStart(2, "0");
+  hourElm.innerHTML = String(hours).padStart(2, "0");
+  minsElm.innerHTML = String(mins).padStart(2, "0");
+  secsElm.innerHTML = String(secs).padStart(2, "0");
+}, 1000);
+
+// sale of the month timer end
